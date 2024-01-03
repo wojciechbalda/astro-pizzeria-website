@@ -2,7 +2,7 @@
 
 
 ## Live version
-[Click]()
+[Click](https://astro-pizzeria-website.vercel.app/)
 
 
 ## Tech stack
