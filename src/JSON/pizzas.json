@@ -1,0 +1,95 @@
+{
+    "results" : [
+    {
+      "name": "pizza1",
+      "price": 32.50,
+      "ingredients": [
+        "basil", "salami", "mushrooms", "mushrooms", "sauce"
+      ],
+      "image": "/pizzaImages/pizza1.webp"
+    },
+    {
+      "name": "pizza2",
+      "price": 45.70,
+      "ingredients": [
+        "basil", "salami", "mushrooms", "mushrooms", "sauce"
+      ],
+      "image": "/pizzaImages/pizza2.webp"
+    },
+    
+    {
+      "name": "pizza3",
+      "price": 37.00,
+      "ingredients": [
+        "basil", "salami", "mushrooms", "mushrooms", "sauce"
+      ],
+      "image": "/pizzaImages/pizza3.webp"
+    },
+    {
+      "name": "pizza4",
+      "price": 30.20,
+      "ingredients": [
+        "basil", "salami", "mushrooms", "mushrooms", "sauce"
+      ],
+      "image": "/pizzaImages/pizza4.webp"
+    },
+    {
+      "name": "pizza5",
+      "price": 44.00,
+      "ingredients": [
+        "basil", "salami", "mushrooms", "mushrooms", "sauce"
+      ],
+      "image": "/pizzaImages/pizza5.webp"
+    },
+    {
+      "name": "pizza6",
+      "price": 35.50,
+      "ingredients": [
+        "basil", "salami", "mushrooms", "mushrooms", "sauce"
+      ],
+      "image": "/pizzaImages/pizza6.webp"
+    },{
+      "name": "pizza7",
+      "price": 30.00,
+      "ingredients": [
+        "basil", "salami", "mushrooms", "mushrooms", "sauce"
+      ],
+      "image": "/pizzaImages/pizza7.webp"
+    },{
+      "name": "pizza8",
+      "price": 33.50,
+      "ingredients": [
+        "basil", "salami", "mushrooms", "mushrooms", "sauce"
+      ],
+      "image": "/pizzaImages/pizza8.webp"
+    },{
+      "name": "pizza9",
+      "price": 33.00,
+      "ingredients": [
+        "basil", "salami", "mushrooms", "mushrooms", "sauce"
+      ],
+      "image": "/pizzaImages/pizza9.webp"
+    },{
+      "name": "pizza10",
+      "price": 42.00,
+      "ingredients": [
+        "basil", "salami", "mushrooms", "mushrooms", "sauce"
+      ],
+      "image": "/pizzaImages/pizza10.webp"
+    },{
+      "name": "pizza11",
+      "price": 45.00,
+      "ingredients": [
+        "basil", "salami", "mushrooms", "mushrooms", "sauce"
+      ],
+      "image": "/pizzaImages/pizza11.webp"
+    },{
+      "name": "pizza12",
+      "price": 38.50,
+      "ingredients": [
+        "basil", "salami", "mushrooms", "mushrooms", "sauce"
+      ],
+      "image": "/pizzaImages/pizza12.webp"
+    }
+    ]
+}

@@ -1,0 +1,62 @@
+---
+import Container from "./Container.astro";
+// @ts-ignore
+import FacebookIcon from 'astro-feather-icons/Facebook'
+// @ts-ignore
+import InstagramIcon from 'astro-feather-icons/Instagram'
+// @ts-ignore
+import TwitterIcon from 'astro-feather-icons/Twitter' 
+// @ts-ignore
+import PhoneIcon from 'astro-feather-icons/Phone'
+// @ts-ignore
+import MapPin from 'astro-feather-icons/MapPin'
+// @ts-ignore
+import Mail from 'astro-feather-icons/Mail'
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png'
+---
+<footer>
+    <Container classes="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div>
+            <div class="w-1/3 mx-auto">
+                <Image quality="mid" loading="lazy" height="100" src={logo} alt="logo" class="w-full h-full object-cover"/>
+            </div>
+            <div class="flex pt-2 justify-center gap-5">
+                <a href="https://www.facebook.com/"><FacebookIcon fill="black" /></a>
+                <a href="https://www.instagram.com/"><InstagramIcon /></a>
+                <a href="https://twitter.com/"><TwitterIcon fill="black" /></a>
+            </div>
+        </div>
+        <div>
+            <h2 class="text-center font-bold text-lg uppercase">More about company</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic</p>
+        </div>
+        <div class="flex flex-col gap-1 mx-auto">
+            <div class="flex gap-2">
+                <div>
+                    <PhoneIcon/>
+                </div>
+                <p>Złota 9999 <br> Warsaw, 00-377</p>
+            </div>
+            <div class="flex gap-2">
+                <div>
+                    <MapPin/>
+                </div>
+                <a href="tel:+48-111-111-111">+11 111 111 111</a>
+            </div>
+            <div class="flex gap-2">
+                <div>
+                    <Mail/>
+                </div>
+                <a href="mailto:example@test.com">example@test.com</a>
+            </div>
+        </div>
+    </Container>
+    <div class="text-center p-3 bg-black text-white">It's a project for portfolio. This company does not exist</div>
+    <div class="text-center p-3 bg-black text-white">
+        <p>Photos used</p>
+        <a class="block" href="https://www.flaticon.com/free-icons/food" title="food icons">Food icons created by monkik - Flaticon</a>
+        <a class="block" href="https://www.flaticon.com/free-icons/cafe" title="cafe icons">Cafe icons created by Smashicons - Flaticon</a>
+        <a class="block" href="https://www.flaticon.com/free-icons/vegetables" title="vegetables icons">Vegetables icons created by Freepik - Flaticon</a>
+    </div>
+</footer>

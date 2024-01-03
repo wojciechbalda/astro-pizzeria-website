@@ -1,0 +1,48 @@
+---
+import Container from "./Container.astro";
+import Feature from "./Feature.astro";
+import SectionHeading from "./SectionHeading.astro";
+import { Props as FeatureType } from "./Feature.astro";
+import icon1 from "../assets/featuresIcons/vegetables1.png"
+import icon2 from "../assets/featuresIcons/drinksMenu1.png"
+import icon3 from "../assets/featuresIcons/tray1.png"
+
+const features: FeatureType[] = [
+    {
+        heading: "Nulla aliquet porttitor",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        icon: icon1
+    },
+    {
+        heading: "Auctor augue",
+        description: "Ultrices mi tempus imperdiet nulla malesuada. Ultrices mi tempus imperdiet nulla malesuada pellentesque elit. Blandit cursus risus at ultrices mi tempus imperdiet. Aliquam sem et tortor consequat id.",
+        icon: icon2
+    },
+    {
+        heading: "Condimentum id venenatis",
+        description: "Nunc eget lorem dolor sed viverra. Nulla facilisi morbi tempus iaculis urna id. Magnis dis parturient montes nascetur ridiculus mus mauris. Diam sollicitudin tempor id eu. ",
+        icon: icon3
+    }
+]
+---
+
+<section id="sec" class="bg-cover bg-center bg-hero-pattern">
+    <Container>
+        <SectionHeading isWhite title="Lorem ipsum" />
+        <div id="features" class="grid md:grid-cols-3 gap-9">
+            {features.map(feature => <Feature {...feature} />)}
+        </div>
+    </Container>
+</section>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    const menu = document.querySelector('#features') as HTMLElement
+    gsap.from(menu.children, { opacity: 0, scale: 0.5, scrollTrigger: {
+        start: "top center",
+        trigger: menu,
+    }, duration: 1, stagger: 0.2})
+</script>

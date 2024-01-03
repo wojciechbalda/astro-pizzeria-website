@@ -1,0 +1,15 @@
+---
+
+    interface Props {
+        background: string;
+        classes: string;
+        src: ImageMetadata;
+    }
+
+    const { background, classes, src } = Astro.props
+    import { Image } from 'astro:assets';
+---
+
+<div class=`h-[500px] ${background} ${classes} bg-transparent`>
+    <Image format="webp" alt="" quality="70" src={src} height={300} class="h-full rounded-md w-full object-cover" />
+</div>

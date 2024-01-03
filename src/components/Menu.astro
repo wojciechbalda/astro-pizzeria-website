@@ -1,0 +1,42 @@
+---
+import Container from "./Container.astro";
+import Pizza from "./Pizza.astro";
+import SectionHeading from "./SectionHeading.astro";
+import data from '../JSON/pizzas.json'
+const { results: pizzaList } = data
+
+import { Image } from 'astro:assets';
+import olivePhoto from '../assets/ser.png'
+import pizzaPhoto from '../assets/pizza.png'
+---
+
+<section id="menu1" class="relative overflow-hidden">
+    <Container classes=" py-16">
+        <SectionHeading title="Our menu" />
+        <div id="menu" class="grid md:grid-cols-2 lg:grid-cols-3 gap-9">
+            {pizzaList.map(pizza => <Pizza pizzaData={pizza} />)}
+        </div>
+        <Image quality="high" width="500" src={olivePhoto} alt="cheese" class="absolute -z-10 left-0 top-5 -translate-x-1/2 md:w-3/12"/>
+        <Image quality="mid" width="500" src={pizzaPhoto} alt="pizza" class="absolute right-0 bottom-5 -z-10 translate-x-1/4"/>
+        
+    </Container>
+</section>
+
+<script>
+  
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl =  gsap.timeline()
+
+    const pizzaList = document.querySelectorAll("#menu > *")!
+    pizzaList.forEach((pizza, index) => {
+        gsap.from(pizza, { opacity: 0, x: "100vw", duration: 0.7, ease: "power2.out", scrollTrigger: {
+        start: "top center",
+        trigger: pizza,
+    }})
+    })
+
+
+</script>

@@ -1,0 +1,40 @@
+---
+import Container from "./Container.astro";
+import Photo from "./Photo.astro";
+import SectionHeading from "./SectionHeading.astro";
+import photo1 from '../assets/gallery/1.jpg'
+import photo2 from '../assets/gallery/2.jpg'
+import photo3 from '../assets/gallery/3.jpg'
+import photo4 from '../assets/gallery/4.jpg'
+import photo5 from '../assets/gallery/5.jpg'
+import photo6 from '../assets/gallery/6.jpg'
+import photo7 from '../assets/gallery/7.jpg'
+import photo8 from '../assets/gallery/8.jpg'
+---
+
+<section>
+    <Container>
+        <div id="aboutUs" class="lg:min-h-screen flex flex-col justify-center sticky top-0 -z-10">
+            <SectionHeading title="About us" />
+            <p class="text-center text-lg lg:text-4xl ">Lorem ipsum dolor sit amet. Sit quia voluptatem est facere voluptatum qui asperiores odio sit natus reprehenderit vel eveniet quos 33 ipsa reiciendis. Et voluptatem facilis non omnis fugit sed iste sapiente qui quibusdam eius.</p>
+        </div>
+        <div class="hidden lg:grid grid-cols-4 gap-y-12 bg-green-600-400">
+            <Photo src={photo1} classes="pr-24 pt-44" background="bg-orange-400" />
+            <Photo src={photo2} classes="px-10 pb-44" background="bg-green-400" />
+            <Photo src={photo3} classes="pt-72 px-14" background="bg-lime-100" />
+            <Photo src={photo4} classes="pl-20 pb-52" background="bg-red-700" />
+            <Photo src={photo5} classes="pr-8 pl-10 py-24" background="bg-orange-400" />
+            <Photo src={photo6} classes="pb-72 px-16 pt-5" background="bg-green-400" />
+            <Photo src={photo7} classes="py-24 px-10" background="bg-lime-100" />
+            <Photo src={photo8} classes="pr-8 pl-24 pt-24 pb-40" background="bg-red-700" />
+    </Container>
+</section>
+
+<script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger)
+    const aboutUsContent =  document.querySelector('#aboutUs')!
+    gsap.from(aboutUsContent.children, {opacity: 0, duration: 1, y: 100, stagger: 0.3, scrollTrigger: {trigger: aboutUsContent, start: "top center"}})
+</script>

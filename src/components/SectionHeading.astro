@@ -1,0 +1,11 @@
+---
+    interface Props {
+        title: string;
+        isWhite?: boolean;
+    }
+
+    const { title, isWhite } = Astro.props
+---
+
+
+<h2 class=`font-bold text-3xl lg:text-6xl text-center pb-5 uppercase ${isWhite ? "text-white" : ""}`>{title}</h2>

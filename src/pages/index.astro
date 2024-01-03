@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
+import AboutUs from '../components/AboutUs.astro';
+import Map from '../components/Map.astro';
+import Menu from '../components/Menu.astro';
+import Features from '../components/Features.astro';
+import Header from '../components/Header.astro';
+import CartModal from '../components/CartModal';
+import InformationModal from '../components/Information'
+import Backdrop from '../components/Backdrop'
+---
+
+<Layout title="Website">
+	<main>
+		<Header />
+		<Backdrop client:load />
+		<InformationModal client:idle />
+		<CartModal client:load />
+		<Hero />
+		<AboutUs />
+		<Features />
+		<Menu />
+		<Map />
+		<Footer />
+	</main>
+</Layout>
+
+

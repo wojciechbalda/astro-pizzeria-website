@@ -1,0 +1,23 @@
+---
+import Container from "./Container.astro";
+
+---
+
+<section id="hero" class="w-full mt-20 text-white bg-cover bg-hero">
+    <Container classes="flex items-start flex-col gap-y-5 justify-center min-h-[calc(100vh_-_80px)] ">    
+        <h1 class="text-4xl md:text-8xl uppercase text font-bold">The best pizzeria in Warsaw</h1>
+        <p class="text-lg font-bold">Passion for Pizza: Where Quality Ingredients and Skilled Craftsmanship Collide</p>
+        <button id="hero-button" class="bg-orange-900 text-lg px-5 py-3 font-bold">See where we are</button>
+    </Container>
+</section>
+
+<script>
+    import gsap from "gsap";
+    gsap.from('#hero > div > *', {opacity: 0, y: 100, duration: 1, stagger: 0.5, ease: "power5.out"})
+
+    const map = document.querySelector('#map')!
+
+    document.querySelector('#hero-button')!.addEventListener('click', () => {
+        map.scrollIntoView({behavior: "smooth", block: "center"})
+    })
+</script>

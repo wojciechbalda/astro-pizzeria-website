@@ -1,0 +1,16 @@
+---
+
+interface Props {
+    classes?: string;
+}
+
+const { classes } = Astro.props
+
+const isPaddingDefined = classes !== undefined && (classes.includes(' py-') || classes.includes(' p-'))
+
+---
+
+
+<div class=`max-w-screen-xl w-full mx-auto px-5 ${isPaddingDefined ? "" : "py-6"} ${classes}`>
+    <slot />
+</div>

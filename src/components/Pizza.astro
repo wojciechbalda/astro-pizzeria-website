@@ -1,0 +1,40 @@
+---
+    type pizza = {
+        name: string;
+        price: number;
+        ingredients: string[];
+        image: string;
+    }
+
+    interface Props {
+        pizzaData: pizza;  
+    }
+
+    const {pizzaData: {name, price, ingredients, image}} = Astro.props
+
+---
+
+    <div class="w-full grid grid-cols-5 gap-1 p-3 rounded-sm bg-zinc-100/90 items-center">
+        <div class="col-span-2">
+            <img src={image} class="w-full" alt={name} decoding="async" loading="lazy" width="140" height="140" />
+        </div>
+        <div class="col-span-3 flex gap-2 flex-col justify-center">
+            <div class="flex items-center gap-2">
+                <h3 class="text-lg font-bold">{name}</h3>
+                <p>{price.toFixed(2)} zł</p>
+            </div>
+          <p class="text-gray-600">{ingredients.join(", ")}</p>
+          <button data-price={price} data-name={name} data-image={image} class="bg-orange-800 w-full text-white rounded-md py-2">Add</button>
+        </div>
+    </div>
+
+    <script>
+        import { addCartItem } from "../store/cartStore"
+    
+        const buttons = document.querySelectorAll('[data-price]') as NodeListOf<HTMLButtonElement>
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                addCartItem({ name: btn.dataset.name!, price: +btn.dataset.price!, image: btn.dataset.image! })
+            })
+        })
+    </script>
